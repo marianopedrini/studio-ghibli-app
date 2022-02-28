@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer>
-      <div className="flex justify-center items-center h-full gap-x-12">
+    <footer className="flex flex-col items-center pt-6 pb-4">
+      <div className="flex justify-center items-center gap-x-12 mb-3">
         <a
           href="https://github.com/marianopedrini"
           target="_blank"
@@ -16,6 +16,9 @@ export default function Footer() {
         >
           <i className="fab fa-linkedin"></i>
         </a>
+      </div>
+      <div>
+        Made with <span className="text-white">♥</span> by Mariano Pedrini
       </div>
     </footer>
   );

@@ -153,11 +153,10 @@ main {
 /* FOOTER */
 footer {
   background-color: #0a5d8a;
-  height: 100px;
 }
 footer i {
   color: whitesmoke;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 @media (max-width: 768px) {
