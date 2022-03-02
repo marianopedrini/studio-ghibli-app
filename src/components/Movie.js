@@ -1,15 +1,24 @@
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-export default function Movie({ film, resetMovies }) {
+export default function Movie({ film, resetMovies, addToFavorite, isFav }) {
   return (
     <div className="movie-card max-w-sm overflow-hidden my-3 mx-auto">
       <div>
-        <div className="movie-card__img-container">
+        <div className="movie-card__img-container relative">
           <img
             className="w-full"
             src={film.movie_banner}
             alt={`portada ${film.title}`}
           ></img>
+          <div className="fav-icon-div absolute top-0 right-0">
+            <FontAwesomeIcon
+              onClick={() => addToFavorite(film)}
+              className={`fav-icon ${isFav ? 'is-fav' : ''}`}
+              icon={faHeart}
+            />
+          </div>
         </div>
 
         <div className="movie-card__title px-6 pt-4">

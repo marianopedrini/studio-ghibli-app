@@ -8,6 +8,8 @@ export default function Home({
   filteredFilms,
   loading,
   resetMovies,
+  addToFavorite,
+  favorites,
 }) {
   ChangeTitle('Studio Ghibli');
   return (
@@ -16,7 +18,13 @@ export default function Home({
 
       {!loading ? (
         filteredFilms.length !== 0 ? (
-          <Movies films={filteredFilms} resetMovies={resetMovies}></Movies>
+          <Movies
+            films={filteredFilms}
+            resetMovies={resetMovies}
+            addToFavorite={addToFavorite}
+            title={'Movies'}
+            favorites={favorites}
+          ></Movies>
         ) : (
           <Message text={'Sorry! Nothing to show'} />
         )

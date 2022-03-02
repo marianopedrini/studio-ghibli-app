@@ -50,7 +50,7 @@ main {
 }
 
 .loading {
-  font-size: 50px;
+  font-size: 30px;
   color: rgb(82, 82, 82);
 }
 
@@ -148,6 +148,32 @@ main {
 }
 .modal-img {
   max-height: 800px;
+}
+
+.go-fav-button {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.fav-icon-div {
+  background-color: rgb(255, 255, 255, 0.6);
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+}
+.fav-icon {
+  color: rgb(182, 182, 182);
+}
+.fav-icon-div:hover .fav-icon {
+  transform: scale(1.1);
+}
+.fav-icon-div .fav-icon {
+  padding: 10px 10px 5px 10px;
+  transition: all 0.2s ease;
+}
+
+.is-fav {
+  color: red;
 }
 
 /* FOOTER */

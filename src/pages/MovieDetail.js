@@ -18,7 +18,7 @@ export default function MovieDetail({ films }) {
       <div className="container px-4 mx-auto my-5 ">
         <BackButton />
         <div>
-          <div className="col-span-4">
+          <div className="mt-4 col-span-4">
             <MovieBanner
               img={film.movie_banner}
               title={film.title}
