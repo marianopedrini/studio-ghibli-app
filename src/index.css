@@ -168,7 +168,7 @@ main {
   transform: scale(1.1);
 }
 .fav-icon-div .fav-icon {
-  padding: 10px 10px 5px 10px;
+  margin: 10px 10px 5px 10px;
   transition: all 0.2s ease;
 }
 
