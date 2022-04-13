@@ -22,13 +22,13 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 350px;
+  height: 300px;
   max-height: 350px;
   padding: 20px;
 }
 .banner img {
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
   height: auto;
 }
 
@@ -78,7 +78,7 @@ main {
   overflow: hidden;
 }
 .movie-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .movie-card__button button {
   margin-top: -24px;

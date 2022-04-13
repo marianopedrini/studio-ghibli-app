@@ -1,14 +1,5 @@
 import { useState } from 'react';
 export default function Poster({ img, title }) {
-  // <div className="mt-12 md:mt-0">
-  //   <h5 className="text-3xl mb-2 font-semibold pl-2">Movie Poster</h5>
-  //   <img
-  //     className="movie-poster mt-5 rounded-md"
-  //     src={img}
-  //     alt={`${title}`}
-  //   />
-  // </div>
-
   const [showModal, setShowModal] = useState(false);
   return (
     <>

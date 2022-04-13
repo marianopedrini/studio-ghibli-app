@@ -45,7 +45,7 @@ function App() {
     setFilteredFilms(films);
   };
 
-  const addToFavorite = (film) => {
+  const handleFavorite = (film) => {
     if (!favorites.includes(film)) {
       dispatch({ type: 'add', payload: film });
     } else {
@@ -60,13 +60,13 @@ function App() {
 
         <Routes>
           <Route
-            path="movie/:movieId"
+            path="movie/:slug"
             element={<MovieDetail films={films} />}
           ></Route>
           <Route
             path="favorites"
             element={
-              <Favorites films={favorites} addToFavorite={addToFavorite} />
+              <Favorites films={favorites} handleFavorite={handleFavorite} />
             }
           ></Route>
           <Route
@@ -77,7 +77,7 @@ function App() {
                 loading={loading}
                 filteredFilms={filteredFilms}
                 resetMovies={resetMovies}
-                addToFavorite={addToFavorite}
+                handleFavorite={handleFavorite}
                 favorites={favorites}
               />
             }

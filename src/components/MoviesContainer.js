@@ -1,10 +1,10 @@
 import MainTitle from './MainTitle';
-import Movie from './Movie';
+import MovieItem from './MovieItem';
 
-export default function Movies({
+export default function MoviesContainer({
   films,
   resetMovies,
-  addToFavorite,
+  handleFavorite,
   title,
   favorites,
 }) {
@@ -15,13 +15,13 @@ export default function Movies({
         {films.map((film) => {
           let isFav = favorites.some((x) => x.id === film.id);
           return (
-            <Movie
+            <MovieItem
               key={film.id}
               film={film}
               resetMovies={resetMovies}
-              addToFavorite={addToFavorite}
+              handleFavorite={handleFavorite}
               isFav={isFav}
-            ></Movie>
+            ></MovieItem>
           );
         })}
       </div>

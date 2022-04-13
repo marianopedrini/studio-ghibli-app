@@ -2,7 +2,14 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
-export default function Movie({ film, resetMovies, addToFavorite, isFav }) {
+export default function MovieItem({
+  film,
+  resetMovies,
+  handleFavorite,
+  isFav,
+}) {
+  const slug = film.title.toLowerCase().replace("'", '').split(' ').join('-');
+
   return (
     <div className="movie-card max-w-sm overflow-hidden my-3 mx-auto">
       <div>
@@ -12,9 +19,11 @@ export default function Movie({ film, resetMovies, addToFavorite, isFav }) {
             src={film.movie_banner}
             alt={`portada ${film.title}`}
           ></img>
-          <div className="fav-icon-div absolute top-0 right-0">
+          <div
+            className="fav-icon-div absolute top-0 right-0"
+            onClick={() => handleFavorite(film)}
+          >
             <FontAwesomeIcon
-              onClick={() => addToFavorite(film)}
               className={`fav-icon ${isFav ? 'is-fav' : ''}`}
               icon={faHeart}
             />
@@ -34,7 +43,8 @@ export default function Movie({ film, resetMovies, addToFavorite, isFav }) {
         </p>
       </div>
       <Link
-        to={`/movie/${film.id}`}
+        // to={`/movie/${film.id}`}
+        to={`/movie/${slug}`}
         className="movie-card__button px-6 pb-4"
         onClick={resetMovies}
       >

@@ -1,9 +1,9 @@
-import Movies from '../components/Movies';
+import MoviesContainer from '../components/MoviesContainer';
 import Message from '../components/Message';
 import { ChangeTitle } from '../utils/ChangeTitle';
 import BackButton from '../components/BackButton';
 
-const Favorites = ({ films, addToFavorite }) => {
+const Favorites = ({ films, handleFavorite }) => {
   ChangeTitle('Studio Ghibli');
 
   return (
@@ -13,12 +13,12 @@ const Favorites = ({ films, addToFavorite }) => {
       </div>
 
       {films.length > 0 ? (
-        <Movies
+        <MoviesContainer
           films={films}
           title={'Favorites'}
-          addToFavorite={addToFavorite}
+          handleFavorite={handleFavorite}
           favorites={films}
-        ></Movies>
+        ></MoviesContainer>
       ) : (
         <div className="container px-4 mx-auto mt-5 relative ">
           <div className="mt-6 ml-2 hidden md:block">

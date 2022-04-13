@@ -6,8 +6,12 @@ import Poster from '../components/Poster';
 import { ChangeTitle } from '../utils/ChangeTitle';
 
 export default function MovieDetail({ films }) {
-  const { movieId } = useParams();
-  const film = films.find((film) => film.id === movieId);
+  const { slug } = useParams();
+
+  const film = films.find(
+    (film) =>
+      film.title.toLowerCase().replace("'", '').split(' ').join('-') === slug
+  );
 
   if (!film) return null;
 

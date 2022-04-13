@@ -1,5 +1,5 @@
 import Searchbar from '../components/Searchbar';
-import Movies from '../components/Movies';
+import MoviesContainer from '../components/MoviesContainer';
 import Message from '../components/Message';
 import { ChangeTitle } from '../utils/ChangeTitle';
 
@@ -8,7 +8,7 @@ export default function Home({
   filteredFilms,
   loading,
   resetMovies,
-  addToFavorite,
+  handleFavorite,
   favorites,
 }) {
   ChangeTitle('Studio Ghibli');
@@ -18,13 +18,13 @@ export default function Home({
 
       {!loading ? (
         filteredFilms.length !== 0 ? (
-          <Movies
+          <MoviesContainer
             films={filteredFilms}
             resetMovies={resetMovies}
-            addToFavorite={addToFavorite}
+            handleFavorite={handleFavorite}
             title={'Movies'}
             favorites={favorites}
-          ></Movies>
+          ></MoviesContainer>
         ) : (
           <Message text={'Sorry! Nothing to show'} />
         )
