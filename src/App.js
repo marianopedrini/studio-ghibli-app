@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useReducer } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
@@ -7,12 +7,17 @@ import Favorites from './pages/Favorites';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import fetchImages from './api.js';
+import favsReducer from './utils/favsReducer';
+
+const initFavsMovies = () => {
+  return JSON.parse(localStorage.getItem('favsMovies')) || [];
+};
 
 function App() {
   const [films, setFilms] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filteredFilms, setFilteredFilms] = useState(films);
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, dispatch] = useReducer(favsReducer, [], initFavsMovies);
 
   useEffect(() => {
     fetchImages().then((data) => {
@@ -21,6 +26,10 @@ function App() {
       setLoading(false);
     });
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('favsMovies', JSON.stringify(favorites));
+  }, [favorites]);
 
   const handleChange = (e) => {
     let query = e.target.value.toLowerCase();
@@ -38,9 +47,9 @@ function App() {
 
   const addToFavorite = (film) => {
     if (!favorites.includes(film)) {
-      setFavorites(favorites.concat(film));
+      dispatch({ type: 'add', payload: film });
     } else {
-      setFavorites(favorites.filter((x) => x.id !== film.id));
+      dispatch({ type: 'delete', payload: film.id });
     }
   };
 
