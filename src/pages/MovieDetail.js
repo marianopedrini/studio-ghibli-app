@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 
-import MovieBanner from '../components/MovieBanner';
+import MovieBanner from '../components/movies/MovieBanner';
 import BackButton from '../components/BackButton';
-import Poster from '../components/Poster';
-import { ChangeTitle } from '../utils/ChangeTitle';
+import MoviePoster from '../components/movies/MoviePoster';
+import { changeTitle } from '../utils/changeTitle';
 
 export default function MovieDetail({ films }) {
   const { slug } = useParams();
@@ -15,7 +15,7 @@ export default function MovieDetail({ films }) {
 
   if (!film) return null;
 
-  ChangeTitle(`${film.title} - Studio Ghibli`);
+  changeTitle(`${film.title} - Studio Ghibli`);
 
   return (
     <>
@@ -57,7 +57,7 @@ export default function MovieDetail({ films }) {
                 </div>
               </div>
 
-              <Poster img={film.image} title={film.title}></Poster>
+              <MoviePoster img={film.image} title={film.title}></MoviePoster>
             </div>
           </div>
         </div>

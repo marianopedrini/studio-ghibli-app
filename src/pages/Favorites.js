@@ -1,10 +1,10 @@
-import MoviesContainer from '../components/MoviesContainer';
+import MoviesContainer from '../components/movies/MoviesContainer';
 import Message from '../components/Message';
-import { ChangeTitle } from '../utils/ChangeTitle';
+import { changeTitle } from '../utils/changeTitle';
 import BackButton from '../components/BackButton';
 
 const Favorites = ({ films, handleFavorite }) => {
-  ChangeTitle('Studio Ghibli');
+  changeTitle('Studio Ghibli');
 
   return (
     <>

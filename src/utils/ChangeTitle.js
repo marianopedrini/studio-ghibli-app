@@ -1,3 +1,3 @@
-export const ChangeTitle = (newTitle) => {
+export const changeTitle = (newTitle) => {
   return (document.title = newTitle);
 };

@@ -1,7 +1,7 @@
 export default function MovieBanner({ img, title, titlejpn }) {
   return (
     <div
-      className="movie-banner text-white flex flex-col items-baseline"
+      className="movie-banner text-white flex flex-col items-baseline animate__animated animate__fadeIn animate__slow"
       style={{ backgroundImage: `url(${img})` }}
     >
       <div className="movie-titles">

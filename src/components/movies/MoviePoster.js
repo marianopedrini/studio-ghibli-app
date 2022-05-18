@@ -1,5 +1,6 @@
 import { useState } from 'react';
-export default function Poster({ img, title }) {
+
+export default function MoviePoster({ img, title }) {
   const [showModal, setShowModal] = useState(false);
   return (
     <>

@@ -1,4 +1,4 @@
-import MainTitle from './MainTitle';
+import MainTitle from '../MainTitle';
 import MovieItem from './MovieItem';
 
 export default function MoviesContainer({

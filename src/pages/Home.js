@@ -1,7 +1,7 @@
 import Searchbar from '../components/Searchbar';
-import MoviesContainer from '../components/MoviesContainer';
+import MoviesContainer from '../components/movies/MoviesContainer';
 import Message from '../components/Message';
-import { ChangeTitle } from '../utils/ChangeTitle';
+import { changeTitle } from '../utils/changeTitle';
 
 export default function Home({
   handleChange,
@@ -11,7 +11,7 @@ export default function Home({
   handleFavorite,
   favorites,
 }) {
-  ChangeTitle('Studio Ghibli');
+  changeTitle('Studio Ghibli');
   return (
     <>
       <Searchbar handleChange={handleChange} />

@@ -11,7 +11,7 @@ export default function MovieItem({
   const slug = film.title.toLowerCase().replace("'", '').split(' ').join('-');
 
   return (
-    <div className="movie-card max-w-sm overflow-hidden my-3 mx-auto">
+    <div className="movie-card max-w-sm overflow-hidden my-3 mx-auto animate__animated animate__fadeIn">
       <div>
         <div className="movie-card__img-container relative">
           <img
@@ -43,7 +43,6 @@ export default function MovieItem({
         </p>
       </div>
       <Link
-        // to={`/movie/${film.id}`}
         to={`/movie/${slug}`}
         className="movie-card__button px-6 pb-4"
         onClick={resetMovies}
