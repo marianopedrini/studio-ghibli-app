@@ -5,8 +5,8 @@ import 'animate.css';
 import Home from './pages/Home';
 import MovieDetail from './pages/MovieDetail';
 import Favorites from './pages/Favorites';
-import Banner from './components/Banner';
-import Footer from './components/Footer';
+import Banner from './ui/components/Banner';
+import Footer from './ui/components/Footer';
 import fetchImages from './utils/fetchApi';
 import favsReducer from './utils/favsReducer';
 

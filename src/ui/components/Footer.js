@@ -18,7 +18,7 @@ export default function Footer() {
         </a>
       </div>
       <div>
-        Made with <span className="text-white">♥</span> by Mariano Pedrini
+        Made by Mariano Pedrini
       </div>
     </footer>
   );

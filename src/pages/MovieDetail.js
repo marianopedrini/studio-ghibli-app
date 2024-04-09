@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 
-import MovieBanner from '../components/movies/MovieBanner';
-import BackButton from '../components/BackButton';
-import MoviePoster from '../components/movies/MoviePoster';
+import MovieBanner from '../ui/components/movies/MovieBanner';
+import BackButton from '../ui/components/BackButton';
+import MoviePoster from '../ui/components/movies/MoviePoster';
 import { changeTitle } from '../utils/changeTitle';
 
 export default function MovieDetail({ films }) {

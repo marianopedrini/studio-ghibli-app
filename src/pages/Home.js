@@ -1,7 +1,9 @@
-import Searchbar from '../components/Searchbar';
-import MoviesContainer from '../components/movies/MoviesContainer';
-import Message from '../components/Message';
+import Searchbar from '../ui/components/Searchbar';
+import MoviesContainer from '../ui/components/movies/MoviesContainer';
+import Message from '../ui/components/Message';
 import { changeTitle } from '../utils/changeTitle';
+import MoviesSkeleton from '../ui/skeleton';
+import MainTitle from '../ui/components/MainTitle';
 
 export default function Home({
   handleChange,
@@ -29,7 +31,10 @@ export default function Home({
           <Message text={'Sorry! Nothing to show'} />
         )
       ) : (
-        <Message text={'Loading...'} />
+        <>
+          <MainTitle title={'Movies'} />
+          <MoviesSkeleton />
+        </>
       )}
     </>
   );
